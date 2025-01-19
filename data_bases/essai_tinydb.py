@@ -7,3 +7,14 @@ db.insert_multiple([
     {"name": "Julie", "score":5},
     {"name": "Fred", "score":10}
 ])
+
+User = Query()
+patrick = db.search(User.name =="Patrick")
+print(patrick)
+
+high_scores = db.search(where("score")> 1)
+print(high_scores)
+print(db.count(User.name =="Patrick"))
+print(db.contains(User.name =="Patrick"))
+print(db.contains(User.name =="patrick")) 
+print(len(db))
