@@ -18,3 +18,13 @@ print(db.count(User.name =="Patrick"))
 print(db.contains(User.name =="Patrick"))
 print(db.contains(User.name =="patrick")) 
 print(len(db))
+
+db.update({"score": 12}, where("name")=="Patrick")
+print(patrick)
+
+db.update({"roles": ["Junior"]})
+db.update({"roles": ["Pythonista"]}, where("name") =="Patrick")
+db.upsert(
+    {"name": "Eric", "score": 20, "roles": ["Senior"]}, 
+    where("name") == "Eric"  
+) #ajoute à la fin ou modifie si existe déjà
